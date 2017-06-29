@@ -1,3 +1,28 @@
+
 body {
-    background-color: #efd0d5;
+    background-color: #fff7f7;
+    font-family: 'Noto Sans',  sans-serif;*/
+}
+
+.jumbotron {
+  background-color: black;
+  color: white;
+}
+
+.drawing {
+  position: relative;
+}
+
+.this-is-me{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    
+}
+.me-in-plaid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1000px;
 }
