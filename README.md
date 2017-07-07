@@ -1,3 +1,3 @@
 # See [aaronfox.me](http://www.aaronfox.me)
 
-I built this through the wonders of Node, Express, and (soon to be MongoDB and others)
+I built this site using of NodeJS, ExpressJS, and (soon to be MongoDB and others)
