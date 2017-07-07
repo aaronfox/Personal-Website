@@ -1,24 +1,41 @@
 <% include ../partials/header.ejs %>
-<div class="jumbotron text-center">
-  <div><p>Hi, I'm Aaron Fox.</p></div>
-</div>
-<div class="container-fluid">
-  <div class="col-sm-6">
-    <p>I love messing with computers and making cool stuff with them.</p>
-    <p>I'm currently a sophomore at the University of Lousiville majoring in Computer Engineering and Computer Science.</p>
-    <p>This page is still under construction and definitely is still in the works. You can check out my <a href="https://github.com/aaronfox">GitHub</a> if you'd like.</p>
-  </div>
-   <div class="col-sm-6">
-     <div class="drawing">
-       <img class="this-is-me img img-responsive" src="images/this_is_me.gif">
-       <img class="me-in-plaid img img-responsive .center-block" src="images/Aaron_in_Plaid_Shirt.png">
-     </div>
-  </div>
-</div>
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </body>
-</html>
+<!-- BEGIN NAVBAR -->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+                <a class="navbar-brand my-logo" href="#">Aaron Fox</a>
+			</div><!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#">About Me</a>
+					</li>
+					<li>
+						<a href="/blog">Blog</a>
+					</li>
+					<li>
+						<a href="/resume">Resume</a>
+					</li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+<!-- END NAVBAR -->
+	<div class="jumbotron text-center top-of-page">
+		<div>
+			Hi, I'm Aaron Fox.
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="col-sm-6">
+			<p>I love messing with computers and making cool stuff with them.</p>
+			<p>I'm currently a sophomore at the <a class="uofl" href="http://louisville.edu/" target="_blank">University of Lousiville</a> majoring in Computer Engineering and Computer Science.</p>
+			<p>This page is still under construction and definitely is still in the works. You can check out my <a href="https://github.com/aaronfox">GitHub</a> if you'd like.</p>
+		</div>
+		<div class="col-sm-6">
+			<div class="drawing"><img class="this-is-me img img-responsive" src="images/this_is_me.gif"> <img class="me-in-plaid img img-responsive .center-block" src="images/Aaron_in_Plaid_Shirt.png"></div>
+		</div>
+	</div>
+<%include ../partials/footer.ejs %>

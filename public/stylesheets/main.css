@@ -1,16 +1,32 @@
-
+/* GENERAL CSS */
 body {
     background-color: #fff7f7;
     font-family: 'Noto Sans',  sans-serif;*/
 }
 
+.navbar {
+  background-color: #212121;
+  border-radius: 0px;
+  margin-bottom: -30px; 
+}
+
+.my-logo {
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
+}
+
+.top-of-page {
+    margin-top: 30px;
+}
+/* INDEX/ABOUT ME CSS */
 .jumbotron {
-  background-color: black;
-  color: white;
+    background-color: black;
+    color: white;
+    font-size: 8vw;
 }
 
 .drawing {
-  position: relative;
+    position: relative;
 }
 
 .this-is-me{
@@ -26,3 +42,30 @@ body {
   left: 0;
   width: 1000px;
 }
+
+.uofl {
+  color: #AD0000;
+  text-decoration: none;
+}
+
+a.uofl:hover {
+  font-weight: bold;
+}
+
+a.uofl:link
+{
+   color: #AD0000;
+   text-decoration: none;
+}
+a.uofl:visited
+{
+   color: #AD0000;
+   text-decoration: none;
+}
+
+a.uofl:active
+{
+   color: #AD0000;
+   text-decoration: none;
+}
+
