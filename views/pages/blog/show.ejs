@@ -1,0 +1,61 @@
+<% include ../../partials/header.ejs %>
+ <body class="blog-index-page">
+<!-- BEGIN NAVBAR -->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+                <a class="navbar-brand my-logo hvr-buzz" href="/"><img class="my-logo" src="/images/fox_head.png"></a>
+			</div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="/">About Me</a>
+					</li>
+					<li class="active">
+						<a href="/blog">Blog</a>
+					</li>
+					<li>
+						<a href="/resume">Resume</a>
+					</li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+<!-- END NAVBAR -->
+
+<!--
+<div class="container-fluid top-of-page">
+
+    <div class="blog-show-image-top-group">
+        <img class="img img-responsive blog-show-image .center-block" src="<%= blog.image %>">
+        <h1 class="blog-show-title"><%= blog.title %></h1>
+    </div>
+
+    <div class="drawing">
+        <img class="this-is-me img img-responsive" src="<%= blog.image %>">
+        <h1 class="me-in-plaid .center-block"><%= blog.title %></h1>
+    </div>
+
+
+</div>
+-->
+     <header class="intro-header top-of-page" style="background-image: url('<%= blog.image %>')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1><%= blog.title %></h1>
+                        <h2 class="subheading"><%= blog.subheading %></h2>
+                        <span class="meta">Posted by <em>Aaron Fox</em> on <%= blog.created %></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+     <div class="container blog-show-body">
+        <%- blog.body %>
+     </div>
+<% include ../../partials/footer.ejs %>
