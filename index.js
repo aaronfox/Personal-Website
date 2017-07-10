@@ -10,6 +10,7 @@ var express = require('express');
 var app = express();
 
 var mongoUrl = process.env.MONGOURL || "mongodb://localhost/blog" 
+
 mongoose.connect(mongoUrl);
 app.set('port', (process.env.PORT || 5000));
 
