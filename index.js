@@ -1,9 +1,13 @@
-var express       = require('express'),
-    app           = express(),
-    bodyParser    = require('body-parser'),
-    mongoose      = require('mongoose'),
+var express        = require('express'),
+    app            = express(),
+    bodyParser     = require('body-parser'),
+    mongoose       = require('mongoose'),
+    methodOverride = require('method-override'),
+    passport       = require('passport'),
+    LocalStrategy  = require('passport-local');
     // MongoDB Schema
-    Blog          = require("./models/blog");
+    Blog           = require("./models/blog"),
+    User           = require('./models/user')
 
 mongoose.Promise = global.Promise;
 var express = require('express');
@@ -16,10 +20,27 @@ app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride("_method"));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
+// PASSPORT CONFIG
+app.use(require('express-session')({
+    secret: "This isn't really a secret since I'm posting this to GitHub... I should probably use process.env instead",
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
+// NEWLY ADDED
+app.use(function(req, res, next) {
+    res.locals.currentUser = req.user;
+    next();
+})
 // Test blog CREATION
 /*Blog.create({
     title: "Test blog 2",
@@ -43,6 +64,54 @@ app.get('/blog', function(req, res) {
 app.get('/resume', function(req, res) {
     res.render('pages/resume');
 });
+
+// AUTH ROUTES
+
+// Register form
+app.get("/register", function(req, res) {
+    res.render("pages/register");
+});
+
+// Handle sign up logic
+app.post("/register", function(req, res) {
+    var newUser = new User({username: req.body.username});
+    User.register(newUser, req.body.password, function(err, newUser) {
+        if (err) {
+            console.log(err);
+            return res.render("pages/register");
+        }
+        passport.authenticate("local")(req, res, function() {
+            res.redirect("blog/index");
+        });
+    });
+});
+
+// Show login form
+app.get("/login", function(req, res) {
+    res.render("pages/login");
+});
+
+// Handle login logic
+app.post("/login", passport.authenticate("local", {
+    successRedirect: "/blog",
+    failureRedirect: "/login"
+}),  function(req, res) {
+//    res.send("login logic woo");
+});
+
+// Logout route
+app.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/");
+})
+
+// Middleware
+function isLoggedin(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect("/login");   
+}
 
 app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));

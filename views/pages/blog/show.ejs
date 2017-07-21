@@ -20,28 +20,17 @@
 					<li>
 						<a href="/resume">Resume</a>
 					</li>
+                    <% if(currentUser) { %>
+                        <li>
+                            <a href="#">Logged in as <%= currentUser.username %></a>
+                        </li>
+                    <% } %>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
 <!-- END NAVBAR -->
 
-<!--
-<div class="container-fluid top-of-page">
-
-    <div class="blog-show-image-top-group">
-        <img class="img img-responsive blog-show-image .center-block" src="<%= blog.image %>">
-        <h1 class="blog-show-title"><%= blog.title %></h1>
-    </div>
-
-    <div class="drawing">
-        <img class="this-is-me img img-responsive" src="<%= blog.image %>">
-        <h1 class="me-in-plaid .center-block"><%= blog.title %></h1>
-    </div>
-
-
-</div>
--->
      <header class="intro-header top-of-page" style="background-image: url('<%= blog.image %>')">
         <div class="container">
             <div class="row">
@@ -50,6 +39,13 @@
                         <h1><%= blog.title %></h1>
                         <h2 class="subheading"><%= blog.subheading %></h2>
                         <span class="meta">Posted by <em>Aaron Fox</em> on <%= blog.created %></span>
+                        <% if(currentUser) { %>
+                            <a class="btn btn-warning" href="/blog/<%= blog._id %>/edit">Edit</a>
+                            <form style="display: inline;" action="/blog/<%= blog._id %>?_method=DELETE" method="POST">
+                                <button class="btn btn-danger">Delete</button>
+                            </form>
+                        <% } %>
+                        
                     </div>
                 </div>
             </div>
@@ -58,4 +54,5 @@
      <div class="container blog-show-body">
         <%- blog.body %>
      </div>
+     
 <% include ../../partials/footer.ejs %>

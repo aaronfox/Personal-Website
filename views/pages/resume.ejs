@@ -20,6 +20,14 @@
 					<li  class="active">
 						<a href="#">Resume</a>
 					</li>
+                    <% if(currentUser) { %>
+                        <li>
+                            <a href="#">Logged in as <%= currentUser.username %></a>
+                        </li>
+                        <li>
+                            <a href="/logout">Logout</a>
+                        </li>
+                    <% } %>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
