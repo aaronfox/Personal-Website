@@ -67,24 +67,24 @@ app.get('/resume', function(req, res) {
 
 // AUTH ROUTES
 
-// Register form
-app.get("/register", function(req, res) {
-    res.render("pages/register");
-});
-
-// Handle sign up logic
-app.post("/register", function(req, res) {
-    var newUser = new User({username: req.body.username});
-    User.register(newUser, req.body.password, function(err, newUser) {
-        if (err) {
-            console.log(err);
-            return res.render("pages/register");
-        }
-        passport.authenticate("local")(req, res, function() {
-            res.redirect("blog/index");
-        });
-    });
-});
+//// Register form
+//app.get("/register", function(req, res) {
+//    res.render("pages/register");
+//});
+//
+//// Handle sign up logic
+//app.post("/register", function(req, res) {
+//    var newUser = new User({username: req.body.username});
+//    User.register(newUser, req.body.password, function(err, newUser) {
+//        if (err) {
+//            console.log(err);
+//            return res.render("pages/register");
+//        }
+//        passport.authenticate("local")(req, res, function() {
+//            res.redirect("blog/index");
+//        });
+//    });
+//});
 
 // Show login form
 app.get("/login", function(req, res) {
