@@ -65,6 +65,9 @@ app.get('/resume', function(req, res) {
     res.render('pages/resume');
 });
 
+app.get('/rip_sir_spoonsalot', function(req, res) {
+    res.render('pages/rip_sir_spoonsalot');
+})
 // AUTH ROUTES
 
 //// Register form
