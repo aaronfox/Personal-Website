@@ -12,5 +12,7 @@ $(document).ready(function(){
 //    'line-height':'300px'
     }, 8000);
     
+    var audio = new Audio('../audio/Heavenly_Choir.mp3');
+    audio.play();
 
 });
