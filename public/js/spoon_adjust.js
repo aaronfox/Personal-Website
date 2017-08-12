@@ -21,10 +21,23 @@ $(document).ready(function(){
     if (isMobile) {
         $('.mobile-alert').show();
         $(".mobile-alert").fadeOut(5000);
-        $('html').click(function() {
+        
+        // run on page load
+        var button = document.getElementsByTagName('html')[0];
         var audio = new Audio('../audio/Heavenly_Choir.mp3');
-        audio.play();
-    });
+
+        var onClick = function() {
+            console.log("button clicked");
+            audio.play(); // audio will load and then play
+        };
+
+        button.addEventListener('click', onClick, false);
+        
+        
+//        $('html').click(function() {
+//        var audio = new Audio('../audio/Heavenly_Choir.mp3');
+//        audio.play();
+//    });
     } else {
         var audio = new Audio('../audio/Heavenly_Choir.mp3');
         audio.play();
