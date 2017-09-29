@@ -212,6 +212,11 @@ fadeIn
   text-decoration: none;
 }
 
+.brown-fellows {
+  color: #91662b;
+  text-decoration: none;
+}
+
 a.uofl:hover {
   font-weight: bold;
 }
