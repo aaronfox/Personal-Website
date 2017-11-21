@@ -200,12 +200,14 @@ fadeIn
     
 }
 
+/*
 .me-in-plaid {
   position: absolute;
   top: 0;
   left: 0;
   width: 1000px;
 }
+*/
 
 .uofl {
   color: #AD0000;
@@ -284,7 +286,7 @@ a.iarc:active {
 
 .index-page-me-info {
     background: #e5e0e0;
-    
+    font-size: 1.3vw;
 }
 
 .hub {
@@ -376,4 +378,16 @@ a.iarc:active {
     .resume {
     font-size: 2vw;
 }
+}
+
+@media (min-width: 768px) {
+  .row.equal {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.equal > div[class*='col-'] {  
+  display: flex;
+  flex-direction: column;
 }
