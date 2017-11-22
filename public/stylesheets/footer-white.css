@@ -95,6 +95,14 @@
     color: black;
 }
 
+#myFooter .fa-spoon:hover{
+    color: silver;
+
+}
+
+#myFooter .fa-spoon:focus{
+    color: silver;
+}
 /* CSS used for positioning the footers at the bottom of the page. */
 /* You can remove this. */
 
