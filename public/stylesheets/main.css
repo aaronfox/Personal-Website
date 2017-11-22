@@ -284,9 +284,17 @@ a.iarc:active {
    text-decoration: none;
 }
 
+
+/*Font size for index page*/
 .index-page-me-info {
     background: #e5e0e0;
+}
+
+@media screen and (min-width: 1200px) {
+    .index-page-me-info {
+    background: #e5e0e0;
     font-size: 1.3vw;
+}
 }
 
 .hub {
