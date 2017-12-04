@@ -86,12 +86,12 @@
     color: #0077B5;
 }
 
-#myFooter .fa-snapchat-ghost:hover{
+#myFooter .fa-book:hover{
     color: black;
 
 }
 
-#myFooter .fa-snapchat-ghost:focus{
+#myFooter .fa-book:focus{
     color: black;
 }
 
