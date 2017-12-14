@@ -68,6 +68,10 @@ app.get('/resume', function(req, res) {
 app.get('/rip_sir_spoonsalot', function(req, res) {
     res.render('pages/rip_sir_spoonsalot');
 })
+
+app.get('/cameron', function(req, res) {
+    res.render('pages/cameron');
+})
 // AUTH ROUTES
 
 //// Register form
