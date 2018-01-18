@@ -72,6 +72,10 @@ app.get('/rip_sir_spoonsalot', function(req, res) {
 app.get('/cameron', function(req, res) {
     res.render('pages/cameron');
 })
+
+app.get('/hunger', function(req, res) {
+    res.render('pages/hunger');
+})
 // AUTH ROUTES
 
 //// Register form
