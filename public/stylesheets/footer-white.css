@@ -68,13 +68,13 @@
     color:#6cc644;
 }
 
-#myFooter .fa-twitter:hover{
-    color: #00aced;
+#myFooter .fa-instagram:hover{
+    color: #8a3ab9;
 
 }
 
-#myFooter .fa-twitter:focus{
-    color:#00aced;
+#myFooter .fa-instagram:focus{
+    color:#8a3ab9;
 }
 
 #myFooter .fa-linkedin:hover{
