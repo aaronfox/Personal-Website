@@ -311,6 +311,16 @@ a.iarc:active {
     background: #e5e0e0;
 }
 
+.index-list-image {
+  background-color: purple;
+}
+
+.equal {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
 @media screen and (min-width: 1200px) {
     .index-page-me-info {
     background: #e5e0e0;
