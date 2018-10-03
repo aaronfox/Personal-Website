@@ -236,7 +236,7 @@ fadeIn
 }
 
 .brown-fellows {
-  color: #91662b;
+  color: #91662b !important;
   text-decoration: none;
 }
 
@@ -311,14 +311,9 @@ a.iarc:active {
     background: #e5e0e0;
 }
 
-.index-list-image {
-  background-color: purple;
-}
-
-.equal {
-  display: flex;
-  display: -webkit-flex;
-  flex-wrap: wrap;
+.index-page-list-image {   
+  width:100%;
+  /* max-width: 20px; */
 }
 
 @media screen and (min-width: 1200px) {
