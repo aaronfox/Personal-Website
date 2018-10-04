@@ -221,6 +221,14 @@ fadeIn
     
 }
 
+.vcenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
 /*
 .me-in-plaid {
   position: absolute;
@@ -311,8 +319,19 @@ a.iarc:active {
     background: #e5e0e0;
 }
 
+/* row {
+    background: #f8f9fa;
+    margin-top: 20px;
+  } */
+.media-center{
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
 .index-page-list-image {   
-  width:100%;
+  width:100%; /*makes sure all images are same width*/
   /* max-width: 20px; */
 }
 
