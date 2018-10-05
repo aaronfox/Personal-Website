@@ -67,15 +67,20 @@ app.get('/resume', function(req, res) {
 
 app.get('/rip_sir_spoonsalot', function(req, res) {
     res.render('pages/rip_sir_spoonsalot');
-})
+});
 
 app.get('/cameron', function(req, res) {
     res.render('pages/cameron');
-})
+});
 
 app.get('/hunger', function(req, res) {
     res.render('pages/hunger');
 })
+
+app.get('/flappy', function (req, res) {
+    res.render('pages/flappy');
+});
+
 // AUTH ROUTES
 
 //// Register form
