@@ -81,6 +81,10 @@ app.get('/flappy', function (req, res) {
     res.render('pages/flappy');
 });
 
+app.get('/flappy_aaron', function (req, res) {
+    res.render('pages/flappy_aaron');
+});
+
 // AUTH ROUTES
 
 //// Register form
