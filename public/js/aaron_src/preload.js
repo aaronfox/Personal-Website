@@ -25,11 +25,11 @@ preload.prototype = {
         this.game.load.spritesheet('speakers', 'aaron_assets/speaker_icon_spritesheet.png', 35, 35, 2);
         
         this.game.load.audio('jump_audio', 'aaron_assets/jump_sound.wav');
-        this.game.load.audio('hit_audio', 'aaron_assets/grey_mad.wav');
+        this.game.load.audio('hit_audio', 'aaron_assets/ouch_golly_gee.mp3');
         this.game.load.audio('Pim Poy', 'aaron_assets/Pim Poy.wav');
         this.game.load.audio('Game Over Pim Poy', 'aaron_assets/Pim Poy Pocket.wav');
         this.game.load.audio('background_music', 'aaron_assets/Retro Gap loop.wav');
-        this.game.load.audio('out_of_bounds_audio', 'aaron_assets/Grey_Falling.wav');
+        this.game.load.audio('out_of_bounds_audio', 'aaron_assets/better_ouch.wav');
 
         this.game.load.image('background', 'aaron_assets/London_Night_Background.png');
         
