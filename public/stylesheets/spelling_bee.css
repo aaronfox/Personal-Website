@@ -21,13 +21,17 @@ body {
 } 
 
 h1 {
-    font-size: 600% !important;
+    font-size: 7.5vw !important;
     color: #feb71b !important;
 }
 
 h2 {
-    font-size: 260% !important;
+    font-size: 4.2vw !important;
     margin-bottom: 20px !important;
+}
+
+h3 {
+    font-size: 3.6vw !important;
 }
 
 .left-margin {

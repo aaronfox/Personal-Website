@@ -108,9 +108,9 @@ app.get('/spelling_bee', function(req, res) {
             //    console.log(JSON.stringify(res.results[0].lexicalEntries));
             word = JSON.stringify(res.results[0].lexicalEntries);
             JSONWord = JSON.parse(word);
-            console.log('JSONWord ==');
+            // console.log('JSONWord ==');
             // Use JSONWord[0].entries[0].senses[0].definitions to extract the first definition of a word
-            console.log(JSONWord[0].entries[0].senses[0].definitions);
+            // console.log(JSONWord[0].entries[0].senses[0].definitions);
             definition = JSONWord[0].entries[0].senses[0].definitions;
             pronunciation = JSONWord[0].pronunciations[0].audioFile;
             wordObject = {
@@ -118,9 +118,6 @@ app.get('/spelling_bee', function(req, res) {
                 definition: definition,
                 pronunciation: pronunciation
             };
-            console.log(pronunciation);
-            //    console.log("word!!");
-            //    console.log(word);
             app.post('/spelling_bee/nextWord', function (req, res) {
                 //    res.send('You sent the name "' + req.body.name + word + '".');
                 //    console.log(testWords[Math.floor(Math.random()*testWords.length)]);
