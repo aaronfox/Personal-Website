@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/spelling_bee.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!--<h1>hello world</h1>
+            <h1 class="word">Word: _______hi___</h1>
+            <h2>Hmm</h2>
+            <script>
+                console.log("lookup == ");
+            </script>
+            <script type='text/javascript'>
+                var rows = <//%-JSON.stringify(ret_val)%>;
+                console.log(rows);
+                console.log(rows.config);
+//                var rows_stringify = JSON.stringify(lookup);
+//                console.log(rows_stringify);
+            </script>-->
+        <div id="contact">
+            <div class="row justify-content-center">
+                <h1>A Foxy Spelling Bee 2018</h1>
+            </div>
+            <div class="row justify-content-center">
+                <h2>Definition:
+                    <%=wordObject.definition%>
+                </h2>
+            </div>
+            <div class="row justify-content-center">
+                <form action="/spelling_bee/nextWord" method="post" class="form-inline" autocomplete="off">
+                    <div class="form-group">
+                        <input class="form-control left-margin" type="text" id="spelling_attempt" name="spelling"
+                            placeholder="Your spelling here" autofocus />
+                        <button type="button" class="btn btn-primary left-margin" id="check_spelling">Check Spelling</button>
+
+                        <input type="submit" class="btn btn-success left-margin" value="Next Word" />
+                        <button type="button" class="btn btn-warning left-margin" id="reset_score">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <h3 id="spelling-alert">&nbsp;</h3>
+        </div>
+        <div class="row justify-content-center">
+            <audio controls autoplay>
+                <source src="<%=wordObject.pronunciation%>" type="audio/mpeg"> Your browser does not support the audio
+                element.
+            </audio>
+        </div>
+        <div class="row justify-content-around">
+            <h2 class="col-xs-6" id="player_one">Player 1: <div style="display:none;" id="player_one_score">0</div>
+            </h2>
+            <h2 class="col-xs-6" id="player_two">Player 2: <div style="display:none;" id="player_two_score">0</div>
+            </h2>
+
+        </div>
+        <p1 display="none" id="secret-entry-word">
+            <%=wordObject.word%>
+        </p1>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="../js/spelling_bee.js"></script>
+
+</html>

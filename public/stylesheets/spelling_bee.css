@@ -1,0 +1,41 @@
+#secret-entry-word {
+    display:none;
+}
+
+#player_one_score, #player_two_score {
+    display: inline-block;
+}
+
+html, body {
+    height:100%;
+  }
+  
+body {
+    /* background-image: url("../media/carmen.jpg");
+    background-repeat: repeat; */
+    background-color: #009fe9 !important;
+    color: white !important;
+    font-family: 'Open Sans', sans-serif !important;
+    display:flex;
+    align-items:center;
+} 
+
+h1 {
+    font-size: 600% !important;
+    color: #feb71b !important;
+}
+
+h2 {
+    font-size: 260% !important;
+    margin-bottom: 20px !important;
+}
+
+.left-margin {
+    margin-left: 8px !important;
+ }
+
+ #spelling-alert {
+    color: #feb71b;
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
