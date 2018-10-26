@@ -2,7 +2,7 @@
 
 I built this site using NodeJS, ExpressJS, MongoDB, Bootstrap, and other goodies
 
-Here's a screenshot the homepafe of my website as of 10/4/2018
+Here's a screenshot the homepage of my website as of 10/4/2018
 ![10-4-2018 Screenshot of Website](https://user-images.githubusercontent.com/19690086/46512986-76a98880-c824-11e8-979e-fbb208f102b0.png)
 
 
