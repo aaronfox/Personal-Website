@@ -347,7 +347,7 @@ a.iarc:active {
 }
 
 /*Formatting space at top of index page using media queries*/
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 768px) {
   .format-top-index-page {
     margin-top: -50px;
 }

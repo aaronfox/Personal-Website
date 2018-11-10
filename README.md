@@ -18,6 +18,7 @@ Here's a screenshot of the homepage of my website as of 11/27/2017 (Note: The "T
 - ~~Add funny Flappy Bird game of myself (and others) to site
 - Consider converting backend from MongoDB to SQL
 - Add Projects tab with 3D Print Previewer found at: https://codepen.io/akhil_001/pen/zoQdaO
+- ~~Fix margins for mobile/desktop site changes using media queries~~
 
 
 
