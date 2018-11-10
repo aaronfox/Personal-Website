@@ -127,22 +127,24 @@ a.blog-card-link:active {
   transform: rotate(360deg);
 }
 
-/* Forward */
-.hvr-forward {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-}
+@media only screen and (min-width: 768px) {
+  /* Forward */
+  .hvr-forward {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+  }
 
-.hvr-forward:hover, .hvr-forward:focus, .hvr-forward:active {
-  -webkit-transform: translateX(8px);
-  transform: translateX(8px);
+  .hvr-forward:hover, .hvr-forward:focus, .hvr-forward:active {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
 }
 
 /*
@@ -336,21 +338,33 @@ a.iarc:active {
 }
 
 @media screen and (min-width: 1200px) {
-    .index-page-me-info {
+  .index-page-me-info {
     background: #e5e0e0;
     font-size: 1.3vw;
-}
+  }
 }
 
 .hub {
     color: #4078c0;
 }
 
+.top-paragraph-index-page {
+  margin-top: 15px;
+}
+
+/*Mobile Media Queries*/
 /*Formatting space at top of index page using media queries*/
 @media screen and (max-width: 768px) {
   .format-top-index-page {
-    margin-top: -50px;
-}
+    margin-top: -45px;
+  }
+  .top-paragraph-index-page {
+    padding-top: 10px;
+    /* margin-top: 25px; */
+  }
+  .drawing {
+    margin-top: 10px;
+  }
 }
 
 
