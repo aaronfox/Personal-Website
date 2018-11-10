@@ -345,6 +345,15 @@ a.iarc:active {
 .hub {
     color: #4078c0;
 }
+
+/*Formatting space at top of index page using media queries*/
+@media screen and (max-width: 770px) {
+  .format-top-index-page {
+    margin-top: -50px;
+}
+}
+
+
 /* =================================================================================== */
 /* Blog header from https://github.com/BlackrockDigital/startbootstrap-clean-blog */
 .intro-header {
