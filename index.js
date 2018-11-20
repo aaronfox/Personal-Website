@@ -19,6 +19,13 @@ mongoose.connect(mongoUrl);
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
+
+// Handle 500
+app.use(function (error, req, res, next) {
+    res.send('Oh, nards. It\'s a 500 (Internal Server) Error. It looks like the server\'s acting funky. Luckily, refreshing should fix this!', 500);
+    console.log(error);
+});
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 app.set('views', __dirname + '/views');
@@ -42,11 +49,7 @@ app.use(function(req, res, next) {
     next();
 })
 
-// Handle 500
-app.use(function (error, req, res, next) {
-    res.send('Oh, nards. It\'s a 500 (Internal Server) Error. It looks like the server\'s acting funky. Luckily, refreshing should fix this!', 500);
-    console.log(error);
-});
+
 // Test blog CREATION
 /*Blog.create({
     title: "Test blog 2",
