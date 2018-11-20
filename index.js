@@ -41,6 +41,12 @@ app.use(function(req, res, next) {
     res.locals.currentUser = req.user;
     next();
 })
+
+// Handle 500
+app.use(function (error, req, res, next) {
+    res.send('Oh, nards. It\'s an error 500 (Internal Server Error). It looks like the server\'s acting funky. Luckily, refreshing should fix this!', 500);
+    console.log(error);
+});
 // Test blog CREATION
 /*Blog.create({
     title: "Test blog 2",
@@ -52,6 +58,7 @@ app.use(function(req, res, next) {
 // Routes
 var blogRoutes = require("./routes/blog");
 app.use("/blog", blogRoutes);
+
 
 app.get('/', function(req, res) {
     res.render('pages/index');
