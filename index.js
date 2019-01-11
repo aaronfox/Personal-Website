@@ -22,7 +22,7 @@ app.use(express.static(__dirname + '/public'));
 
 // Handle 500
 app.use(function (error, req, res, next) {
-    res.send('Oh, nards. It\'s a 500 (Internal Server) Error. It looks like the server\'s acting funky. Luckily, refreshing should fix this!', 500);
+    res.status(500).send('Oh, nards. It\'s a 500 (Internal Server) Error. It looks like the server\'s acting funky. Luckily, refreshing should fix this!', 500);
     console.log(error);
 });
 
