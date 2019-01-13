@@ -79,6 +79,10 @@ app.get('/rip_sir_spoonsalot', function(req, res) {
     res.render('pages/rip_sir_spoonsalot');
 });
 
+app.get('/carmen', function (req, res) {
+    res.render('pages/carmen');
+});
+
 app.get('/cameron', function(req, res) {
     res.render('pages/cameron');
 });
