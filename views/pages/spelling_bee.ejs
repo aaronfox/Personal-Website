@@ -8,6 +8,8 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -30,7 +32,7 @@
                 <h1>A Foxy Spelling Bee 2018</h1>
             </div>
             <div class="row justify-content-center">
-                <h2>Definition:
+                <h2 id="definition">Definition:
                     <%=wordObject.definition%>
                 </h2>
             </div>
@@ -43,6 +45,7 @@
 
                         <input type="submit" class="btn btn-success left-margin" value="Next Word" />
                         <button type="button" class="btn btn-warning left-margin" id="reset_score">Reset</button>
+                        <button type="button" class="btn btn-error left-margin" id="test_button">Test</button>
                     </div>
                 </form>
             </div>
@@ -67,6 +70,22 @@
             <%=wordObject.word%>
         </p1>
     </div>
+    <script>
+        $(document).ready(function () {
+            var my_div = $("#definition");
+            $("#test_button").on("click", function () {
+                console.log("clicked test");
+
+                $.ajax({
+                    url: "/spelling_bee_words/test_word"
+                })
+                    .done(function (data) {
+                        console.log("Sample of data:", data);
+                        $('#test_button').html(data.message);
+                    });
+            });
+        });
+    </script>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="../js/spelling_bee.js"></script>
