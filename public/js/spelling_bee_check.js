@@ -2,6 +2,10 @@ var player_one_score = 0;
 var player_two_score = 0;
 var curr_player = 1;
 
+// TODO: Make sure user cannot repeatedly press Check Word button to increment both scores
+// TODO: Make sure same words will not repeat (will need to be implemented via API)
+// TODO: Empty out input text and autofocus on the input text when check word button is clicked and when next word button is clicked
+// (and when Reset button is clicked)
 $(document).ready(function () {
     $("#player_one_score").text(player_one_score);
     $("#player_two_score").text(player_two_score);
@@ -16,7 +20,7 @@ $(document).ready(function () {
         word = $("#secret-entry-word").text();
         console.log("word == " + word);
         spelling_attempt = $("#spelling_attempt").val();
-        
+
         if (word.valueOf().toLowerCase().trim() == spelling_attempt.valueOf().toLowerCase().trim()) {
             if (curr_player == 1) {
                 console.log("incrementing player_one_score");

@@ -236,7 +236,7 @@ app.get('/spelling_bee', function(req, res) {
     // });
     wordObject = {
         word: "dict_word",
-        definition: "Definition of words will go here.",
+        definition: "Definition of words will go here. Click Next Word to begin",
         pronunciation: "/audio/pronunciations_will_go_here.mp3"
     };
     // logWord("cool");
