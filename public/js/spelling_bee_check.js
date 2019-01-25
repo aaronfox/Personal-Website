@@ -6,6 +6,9 @@ var curr_player = 1;
 // TODO: Make sure same words will not repeat (will need to be implemented via API)
 // TODO: Empty out input text and autofocus on the input text when check word button is clicked and when next word button is clicked
 // (and when Reset button is clicked)
+// TODO: Make sure size of definition box never changes and that the title never goes off screen.
+// (Try accomplishing this by setting a viewport for the definition h2 tags and dynamically sizing text that way)
+
 $(document).ready(function () {
     $("#player_one_score").text(player_one_score);
     $("#player_two_score").text(player_two_score);
