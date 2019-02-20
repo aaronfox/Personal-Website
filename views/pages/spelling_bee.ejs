@@ -76,14 +76,11 @@
         $(document).ready(function () {
             var my_div = $("#definition");
             $("#test_button").on("click", function () {
-                console.log("clicked test");
-
                 $.ajax({
                     dataType: "json",
                     url: "/spelling_bee_words/test_word"
                 })
                     .done(function (data) {
-                        console.log("Sample of data:", data);
                         $('#test_button').html(data.message);
                         $("#definition").html(data.definition);
                         $("#secret-entry-word").html(data.word);
