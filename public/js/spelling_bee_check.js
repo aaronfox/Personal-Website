@@ -24,6 +24,10 @@ $(document).ready(function () {
     $("#test_button").click(function () {
         has_checked_spelling = false;
     });
+    $("#test_button").click(function () {
+        $("#spelling_attempt").val('');
+        $("#spelling_attempt").focus();
+    });
     $("#check_spelling").click(function () {
         word = $("#secret-entry-word").text();
         spelling_attempt = $("#spelling_attempt").val();
