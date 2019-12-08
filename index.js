@@ -89,11 +89,8 @@ app.get('/cameron', function(req, res) {
 
 // Snake Code for MicroComputers Class
 snakeScore = 0
-// topScores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-topScores = [0, 0, 0]
+topScores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 app.post('/snake', function (req, res) {
-    // res.render('pages/camerson')
-    //snakeScore = snakeScore + 1
     snakeScore = req.body.score
     if (snakeScore > topScores[topScores.length - 1])
     {
@@ -106,7 +103,8 @@ app.post('/snake', function (req, res) {
 
 app.get('/snake', function (req, res) {
     // res.render('pages/cameron');
-    res.send("Score: " + (topScores))
+    res.render('pages/snake', {scores: topScores})
+    // res.send("Score: " + (topScores))
 
 });
 
