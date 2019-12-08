@@ -87,6 +87,29 @@ app.get('/cameron', function(req, res) {
     res.render('pages/cameron');
 });
 
+// Snake Code for MicroComputers Class
+snakeScore = 0
+// topScores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+topScores = [0, 0, 0]
+app.post('/snake', function (req, res) {
+    // res.render('pages/camerson')
+    //snakeScore = snakeScore + 1
+    snakeScore = req.body.score
+    if (snakeScore > topScores[topScores.length - 1])
+    {
+        topScores[topScores.length - 1] = snakeScore
+        // Sort scores in descending order
+        topScores.sort(function (a, b) { return b - a });
+    }
+    res.send('Received a score!');
+});
+
+app.get('/snake', function (req, res) {
+    // res.render('pages/cameron');
+    res.send("Score: " + (topScores))
+
+});
+
 app.get('/hunger', function(req, res) {
     res.render('pages/hunger');
 })
@@ -141,11 +164,11 @@ app.get('/spelling_bee_words/:word', function (req, res) {
                 pronunciation: pronunciation
             };
             // app.post('/spelling_bee/nextWord', function (req, res) {
-                //    res.send('You sent the name "' + req.body.name + word + '".');
-                //    console.log(testWords[Math.floor(Math.random()*testWords.length)]);
-                // lookupWord is a random word word from the word bank array
-                // lookupWord = testWords[Math.floor(Math.random() * testWords.length)];
-                // logWord(lookupWord);
+            //    res.send('You sent the name "' + req.body.name + word + '".');
+            //    console.log(testWords[Math.floor(Math.random()*testWords.length)]);
+            // lookupWord is a random word word from the word bank array
+            // lookupWord = testWords[Math.floor(Math.random() * testWords.length)];
+            // logWord(lookupWord);
 
 
 
