@@ -25,6 +25,10 @@ body {
     background: #484848;
 }
 
+.blog-content-start {
+    background: #484848;
+}
+
 .blog-card-link {
     text-decoration: none;
     display: block;
@@ -62,6 +66,7 @@ a.blog-card-link:active {
 .blog-show-body {
     color: white;
     font-size: 16px;
+    margin-top: 20px;
 }
 
 /* FROM HOVER.CSS */
@@ -378,7 +383,6 @@ a.iarc:active {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  margin-bottom: 50px;
 }
 .intro-header .site-heading,
 .intro-header .post-heading,

@@ -1,87 +1,26 @@
 var express = require("express");
 var router = express.Router();
-var Blog = require("../models/blog");
-
-
 // Here, "/" is equal to "blog"
-router.get("/", function(req, res) {
-    // Retrieve blogs from database
-    Blog.find({}, function(err, blogs) {
-        if (err) {
-            console.log(err + "\nHI AARON");
-            res.redirect("/");
-        } else {
-            res.render("pages/blog/index", {blogs: blogs, currentUser: req.user});
-        }
-    });
+router.get("/beginning", function(req, res) {
+    res.render("pages/blog/beginning");
+ });
+
+router.get("/adventures_in_europe", function (req, res) {
+    res.render("pages/blog/adventures_in_europe");
 });
 
-// NEW ROUTE
-router.get("/new", isLoggedin, function(req, res) {
-    res.render("pages/blog/new");
+router.get("/algorithms", function (req, res) {
+    res.render("pages/blog/algorithms");
 });
 
-// CREATE ROUTE
-router.post("/", isLoggedin, function(req, res) {
-    Blog.create(req.body.blog, function(err, newBlog) {
-        if (err) {
-            res.render("pages/blog/new");
-        } else {
-            res.redirect("/blog");
-        }
-    });
-});
-
-// SHOW ROUTE
-router.get("/:id", function(req, res) {
-    Blog.findById(req.params.id, function(err, foundBlog) {
-        if (err) {
-            res.redirect("/blog");
-        } else {
-            res.render("pages/blog/show", {blog: foundBlog});
-        }
-    });
-});
-
-// EDIT ROUTE
-router.get("/:id/edit", function(req, res) {
-    Blog.findById(req.params.id, function(err, foundBlog) {
-        if (err) {
-            res.redirect("/blog");
-        } else {
-            res.render("pages/blog/edit", {blog: foundBlog});
-        }
-    });
-});
-
-// UPDATE ROUTE
-router.put("/:id", function(req, res) {
-   Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog) {
-       if (err) {
-           res.redirect("/blog");
-       } else {
-           res.redirect("/blog/" + req.params.id);
-       }
-   }) 
-});
-
-// DELETE ROUTE
-router.delete("/:id", function(req, res) {
-    Blog.findByIdAndRemove(req.params.id, function(err) {
-        if (err) {
-            res.redirect("/blog");
-        } else {
-            res.redirect("/blog");
-        }
-    });
+router.get("/life_update_2018", function (req, res) {
+    res.render("pages/blog/life_update_2018");
 });
 
 
-// Middleware
-function isLoggedin(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect("/login");   
-}
 module.exports = router;
+
+// Note: To add a blog post: do the following
+// Create a new blog EJS post under views/pages/blog/<your_post_here.ejs>
+// Update route in blog.js by adding a new router.get(...) ABOVE the module.exports = router line
+// Update the route leading to it in views/pages/blog.ejs

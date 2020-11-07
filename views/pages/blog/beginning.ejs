@@ -1,0 +1,76 @@
+<% include ../../partials/header.ejs %>
+
+<body>
+    <!-- BEGIN NAVBAR -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button aria-expanded="false" class="navbar-toggle collapsed"
+                    data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span
+                        class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span></button>
+                <a class="navbar-brand my-logo hvr-icon-spin" href="/"><img class="my-logo hvr-icon"
+                        src="../images/fox_head.png"></a>
+            </div><!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/">About Me</a>
+                    </li>
+                    <li class="active">
+                        <a href="/blog">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/resume">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+    <header class="intro-header top-of-page" style="background-image: url('/images/blog_images/long_road_ahead.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Beginning the Journey of Blogging</h1>
+                        <h2 class="subheading">Honestly, I&#39;m just happy to have built the back-end for this blog
+                        </h2>
+                        <span class="meta">Posted by <em>Aaron Fox</em> on Thu Jul 20 2017</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid blog-content-start">
+        <div class="container blog-show-body">
+            <p>Well, now that I've used MongoDB and NodeJS to build the back-end of my blog, I suppose that I need to
+                start
+                adding content to this blog. For now, I'm mostly content that mLab provides a free sandbox database for
+                me to
+                use -even if that's only half a gig of data- and that Heroku also hosts this Node app for free as well.
+                In fact,
+                all of this did not cost me a dime because GitHub's <a href="https://education.github.com/pack">Student
+                    Developer Pack</a> also gave me the free .me domain from Namecheap.</p>
+            <p>So, if you're a college student right now, you can build up your entire personal website, including a
+                back-end,
+                for free, as long as your content with that website not being able to support heavy loads (if you're
+                worried
+                about that kind of thing, you'll almost certainly know who you are anyway.) Sadly, while you can build
+                up your
+                own wicked website all for free, you can't have someone write a righteous blog for you for free as well,
+                so
+                you're forced to do that yourself. The dreary realization that I have to come up with all of these words
+                is
+                rather mind-numbing, so I'll be happy to call this simple post quits for now.</p>
+
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        </div>
+    </div>
+</body>
+<% include ../../partials/footer.ejs %>

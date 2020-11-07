@@ -1,0 +1,70 @@
+<% include ../partials/header.ejs %>
+
+<body>
+    <!-- BEGIN NAVBAR -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button aria-expanded="false" class="navbar-toggle collapsed"
+                    data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span
+                        class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span></button>
+                <a class="navbar-brand my-logo hvr-icon-spin" href="/"><img class="my-logo hvr-icon"
+                        src="images/fox_head.png"></a>
+            </div><!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/">About Me</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/resume">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+    <div class="container-fluid blog-index-page">
+<div class="container top-of-page">
+        <a class="blog-card-link blog-card" href="/blog/life_update_2018">
+            <h1 class="blog-card-title">Appreciating the Incredible Moment that I&#39;m Living in</h1>
+            <span>Posted by <em>Aaron Fox</em> on Tue Jan 30 2018</span>
+            <h3 class="blog-card-body">A bit of braggadocio mixed with much appreciation</h3>
+            <hr>
+        </a>
+
+        <a class="blog-card-link blog-card" href="/blog/algorithms">
+            <h1 class="blog-card-title">Algorithms to Live By Notes</h1>
+            <span>Posted by <em>Aaron Fox</em> on Mon Aug 21 2017</span>
+            <h3 class="blog-card-body">Some notes taken while jet-lagged and transiting around Europe</h3>
+            <hr>
+        </a>
+
+        <a class="blog-card-link blog-card" href="/blog/adventures_in_europe">
+            <h1 class="blog-card-title">Adventures in Europe with the Brown Fellows</h1>
+            <span>Posted by <em>Aaron Fox</em> on Mon Aug 07 2017</span>
+            <h3 class="blog-card-body">An attempt to describe a trip with words that are clearly insufficient</h3>
+            <hr>
+        </a>
+
+        <a class="blog-card-link blog-card" href="/blog/beginning">
+            <h1 class="blog-card-title">Beginning the Journey of Blogging</h1>
+            <span>Posted by <em>Aaron Fox</em> on Thu Jul 20 2017</span>
+            <h3 class="blog-card-body">Honestly, I&#39;m just happy to have built the back-end for this blog</h3>
+            <hr>
+        </a>
+</div>
+</div>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<% include ../partials/footer.ejs %>
