@@ -21,6 +21,6 @@ router.get("/life_update_2018", function (req, res) {
 module.exports = router;
 
 // Note: To add a blog post: do the following
-// Create a new blog EJS post under views/pages/blog/<your_post_here.ejs>
-// Update route in blog.js by adding a new router.get(...) ABOVE the module.exports = router line
-// Update the route leading to it in views/pages/blog.ejs
+// 1. Create a new blog EJS post under views/pages/blog/<your_post_here.ejs>
+// 2. Update route in blog.js by adding a new router.get(...) ABOVE the module.exports = router line
+// 3. Update the route leading to it in views/pages/blog.ejs
