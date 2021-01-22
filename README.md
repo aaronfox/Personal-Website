@@ -8,12 +8,12 @@ Here's a screenshot the homepage of my website as of 10/4/2018
 Here's the mobile (iPhone X rendering) screenshot of the homepage of my website as of 11/13/2018
 ![mobile website image 11-13-18](https://user-images.githubusercontent.com/19690086/48436023-c3e61780-e74b-11e8-9f75-78e786fe28dc.png)
 
-Here's a partial screenshot of the homepage of my website as of 9/19/2018
+Here's a partial screenshot of the homepage of my website as of 9/19/2018:
 ![Screenshot of Website](https://user-images.githubusercontent.com/19690086/45729843-6a72c980-bb9c-11e8-9a97-c16b2512b602.png)
 
 
 
-Here's a screenshot of the homepage of my website as of 11/27/2017 (Note: The "This is me" portion is a gif that draws the words/arrow out)
+Here's a screenshot of the homepage of my website as of 11/27/2017 (Note: The "This is me" portion is a gif that draws the words/arrow out):
 ![Screenshot of website](https://user-images.githubusercontent.com/19690086/33302274-f15349a0-d3c8-11e7-9d5a-9f45e2cac114.png)
 
 ## TODO:
