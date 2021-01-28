@@ -6,7 +6,7 @@ Here's a screenshot the homepage of my website as of 10/4/2018
 ![10-4-2018 Screenshot of Website](https://user-images.githubusercontent.com/19690086/46512986-76a98880-c824-11e8-979e-fbb208f102b0.png)
 
 Here's the mobile (iPhone X rendering) screenshot of the homepage of my website as of 11/13/2018
-![mobile website image 11-13-18](https://user-images.githubusercontent.com/19690086/48436023-c3e61780-e74b-11e8-9f75-78e786fe28dc.png)
+![Mobile Website Image 11-13-18](https://user-images.githubusercontent.com/19690086/48436023-c3e61780-e74b-11e8-9f75-78e786fe28dc.png)
 
 Here's a partial screenshot of the homepage of my website as of 9/19/2018:
 ![Screenshot of Website](https://user-images.githubusercontent.com/19690086/45729843-6a72c980-bb9c-11e8-9a97-c16b2512b602.png)
