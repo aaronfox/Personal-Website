@@ -60,7 +60,7 @@ app.get('/cameron', function(req, res) {
     res.render('pages/cameron');
 });
 
-// ======================================= Multi game logic =======================================
+// ======================================= BEGIN Multi game logic =======================================
 // var server = require('http').Server(app);
 // // NOTE: changed this from original
 // var io = require('socket.io')(server);
@@ -108,6 +108,16 @@ io.on('connection', function (socket) {
         console.log('user disconnected');
         // remove this player from our players object
         delete players[socket.id];
+        // Check if this is last player
+        if (players.length == undefined) {
+            console.log('last!!!');
+            scores.red = 0;
+            scores.blue = 0;
+            star.x = Math.floor(Math.random() * 700) + 50;
+            star.y = Math.floor(Math.random() * 500) + 50;
+            io.emit('starLocation', star);
+            io.emit('scoreUpdate', scores);
+        }
         // emit a message to all players to remove this player
         // NOTE: changed this from original
         io.emit('disconnected', socket.id);
@@ -123,6 +133,8 @@ io.on('connection', function (socket) {
     });
 
     socket.on('starCollected', function () {
+        console.log('in starCollected')
+
         if (players[socket.id].team === 'red') {
             scores.red += 10;
         } else {
