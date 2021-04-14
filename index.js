@@ -71,37 +71,28 @@ var io = require('socket.io')(server);
 // Keep track of all players in game with players
 var players = {};
 
-// star variable keeps track of position of star collectibles
-var star = {
-    x: Math.floor(Math.random() * 700) + 50,
-    y: Math.floor(Math.random() * 500) + 50
-};
-// scores variable keeps track of both team's score
-var scores = {
-    blue: 0,
-    red: 0
-};
+const MAX_TILES_TO_PLACE = 12;
 
 io.on('connection', function (socket) {
     console.log('a user connected');
     // create a new player and add it to our players object
     players[socket.id] = {
-        rotation: 0,
-        x: Math.floor(Math.random() * 700) + 50,
-        y: Math.floor(Math.random() * 500) + 50,
+        tilesToPlace: MAX_TILES_TO_PLACE,
+        placedTileLocations: [],
+        tilesToPlaceLocations: [],
+        numberOfTilesOnBoard: 0,
         playerId: socket.id,
-        team: (Math.floor(Math.random() * 2) == 0) ? 'red' : 'blue'
+        color: '0x' + (Math.floor(Math.random() * 16777215).toString(16))
     };
-    // send the players object to the new player
+    // Send the current players to this player socket only
+    // Note: socket.emit sends objects to just this socket
+    //       while socket.broadcast.emit sends to all other sockets
     socket.emit('currentPlayers', players);
 
-    // send the star object to the new player
-    socket.emit('starLocation', star);
-
     // send the current scores
-    socket.emit('scoreUpdate', scores);
+    // socket.emit('scoreUpdate', scores);
 
-    // update all other players of the new player
+    // Let all other players know of this new player
     socket.broadcast.emit('newPlayer', players[socket.id]);
 
     socket.on('disconnect', function () {
@@ -110,49 +101,43 @@ io.on('connection', function (socket) {
         delete players[socket.id];
         // Check if this is last player
         if (players.length == undefined) {
-            console.log('last!!!');
-            scores.red = 0;
-            scores.blue = 0;
-            star.x = Math.floor(Math.random() * 700) + 50;
-            star.y = Math.floor(Math.random() * 500) + 50;
-            io.emit('starLocation', star);
-            io.emit('scoreUpdate', scores);
+            // Reset board since no players left
+            // This is done automatically by logic of game.js
         }
         // emit a message to all players to remove this player
-        // NOTE: changed this from original
         io.emit('disconnected', socket.id);
     });
 
-    // when a player moves, update the player data
-    socket.on('playerMovement', function (movementData) {
-        players[socket.id].x = movementData.x;
-        players[socket.id].y = movementData.y;
-        players[socket.id].rotation = movementData.rotation;
-        // emit a message to all players about the player that moved
-        socket.broadcast.emit('playerMoved', players[socket.id]);
-    });
+    // Sends to all other players that this player placed a new tile
+    socket.on('tilePlaced', function (tileData) {
+        players[socket.id].placedTileLocations.push(tileData);
 
-    socket.on('starCollected', function () {
-        console.log('in starCollected')
+        // Emit message to all players that tile was placed
+        socket.broadcast.emit('otherTileWasPlaced', players[socket.id])
+    })
 
-        if (players[socket.id].team === 'red') {
-            scores.red += 10;
-        } else {
-            scores.blue += 10;
-        }
-        star.x = Math.floor(Math.random() * 700) + 50;
-        star.y = Math.floor(Math.random() * 500) + 50;
-        io.emit('starLocation', star);
-        io.emit('scoreUpdate', scores);
-    });
+    // Clears out all previous tiles to clear board of any previously removed
+    // tiles that were once placed
+    socket.on('clearCells', function () {
+        players[socket.id].placedTileLocations = []
+
+        // Emit message to all players to clear out current placedTileLocations array
+        socket.broadcast.emit('otherTileWasPlaced', players[socket.id])
+    })
 });
 
-app.get('/multi_game', function (req, res) {
+app.get('/game_of_life', function (req, res) {
     // res.render('pages/multi_game');
-    res.sendFile(__dirname + '/views/pages/multi_game.html');
+    res.sendFile(__dirname + '/views/pages/game_of_life.html');
     // res.sendFile('pages/multi_game.html');
 
 });
+// slide = 0
+setInterval(step, 5000); // advance slides every 5 seconds
+
+function step() {
+    io.sockets.emit('step', 2);
+}
 
 
 // ======================================= END Multi game logic =======================================
