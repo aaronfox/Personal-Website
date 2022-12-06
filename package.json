@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/aaronfox/Personal-Website#readme",
   "dependencies": {
-    "body-parser": "^1.17.2",
+    "body-parser": "^1.20.1",
     "date-and-time": "^0.14.2",
     "ejs": "^2.5.6",
-    "express": "^4.15.3",
+    "express": "^4.18.2",
     "express-session": "^1.15.4",
     "method-override": "^2.3.10",
     "mongoose": "^5.7.5",
